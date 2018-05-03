@@ -60,7 +60,7 @@ function fivedayForecast(city){
         $("#day2").text(day2[0]);
         $('#temp2').text(json["list"][13]["main"]["temp"]); 
         $('#img2').attr("src", "http://openweathermap.org/img/w/" +json["list"][13]["weather"][0]["icon"]+".png");
-        $('#weather1').text(json["list"][13]["weather"][0]["description"]);
+        $('#weather2').text(json["list"][13]["weather"][0]["description"]);
         
         var date3 = json["list"][21]["dt_txt"];
         date3 = new Date(date3);
@@ -68,6 +68,23 @@ function fivedayForecast(city){
         $("#day3").text(day3[0]);
         $('#temp3').text(json["list"][21]["main"]["temp"]);
         $('#img3').attr("src", "http://openweathermap.org/img/w/" +json["list"][21]["weather"][0]["icon"]+".png");
-        $('#weather1').text(json["list"][21]["weather"][0]["description"]);
+        $('#weather3').text(json["list"][21]["weather"][0]["description"]);
+        
+        var date4= json["list"][29]["dt_txt"];
+        date4 = new Date(date4);
+        var day4 = date4.toDateString().split(" " );
+        $("#day4").text(day4[0]);
+        $('#temp4').text(json["list"][29]["main"]["temp"]);
+        $('#img4').attr("src", "http://openweathermap.org/img/w/" +json["list"][29]["weather"][0]["icon"]+".png");
+        $('#weather4').text(json["list"][29]["weather"][0]["description"]);
+        
+        var date5 = json["list"][37]["dt_txt"];
+        date5 = new Date(date5);
+        var day5 = date5.toDateString().split(" ");
+        $("#day5").text(day5[0]);
+        $('#temp5').text(json["list"][37]["main"]["temp"]); 
+        $('#img5').attr("src", "http://openweathermap.org/img/w/" +json["list"][37]["weather"][0]["icon"]+".png");
+        $('#weather5').text(json["list"][37]["weather"][0]["description"]);
+        
     });
 };
