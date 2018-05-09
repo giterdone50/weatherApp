@@ -2,7 +2,6 @@ var city = "";
 //default city is San Diego
 $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=San Diego&mode=json&units=imperial&APPID=2e7a793e3530732e27d99c958b53f8eb",
         function(json){
-            console.log(json);
             console.log(json["weather"]);
             $('#cityName').text(json['name']);
             $('#ambientWeather').text(json['weather'][0]['description']);
@@ -24,7 +23,6 @@ function getCity(ele){
     if(city != ""){
         $.getJSON("http://api.openweathermap.org/data/2.5/weather?q="+city +"&mode=json&units=imperial&APPID=2e7a793e3530732e27d99c958b53f8eb",
         function(json){
-            console.log(json);
             console.log(json["weather"]);
             $('#cityName').text(json['name']);
             $('#ambientWeather').text(json['weather'][0]['description']);
@@ -40,8 +38,10 @@ function getCity(ele){
 }
 
 function fivedayForecast(city){
+    print(city);
     $.getJSON("http://api.openweathermap.org/data/2.5/forecast?q="+city+"&mode=json&units=imperial&APPID=2e7a793e3530732e27d99c958b53f8eb", function(json){
-        console.log(json);  
+        console.log(json);
+        print(city);
         var date1 = json["list"][5]["dt_txt"];
         var date1 = new Date(date1);
         var day = date1.toDateString().split(" ");
